@@ -1,5 +1,3 @@
-import { i18n } from '../i18n';
-
 type ToastType = 'success' | 'error' | 'info';
 
 interface ToastOptions {
