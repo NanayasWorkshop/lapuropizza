@@ -1,4 +1,5 @@
 import { t, i18n } from '../i18n';
+import { assetUrl } from '../utils/dom';
 
 export class Footer {
   private element: HTMLElement;
@@ -31,7 +32,7 @@ export class Footer {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="/media/LaPuroLogoRaueWandHG-1-150x150.webp" alt="La Puro Pizza" class="footer-logo" />
+            <img src="${assetUrl('media/LaPuroLogoRaueWandHG-1-150x150.webp')}" alt="La Puro Pizza" class="footer-logo" />
             <p class="footer-tagline">${t('hero.tagline')}</p>
           </div>
 

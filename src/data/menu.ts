@@ -1,16 +1,16 @@
 import type { MenuItem, CategoryInfo, Topping } from '../types';
 
 export const categories: CategoryInfo[] = [
-  { id: 'pizza', name: 'Pizza', nameEn: 'Pizza', image: '/media/kat-pizza-300x300.webp' },
-  { id: 'pasta', name: 'Pasta', nameEn: 'Pasta', image: '/media/kat-pasta-300x300.webp' },
-  { id: 'salat', name: 'Salate', nameEn: 'Salads', image: '/media/kat-salat-2-300x300.webp' },
-  { id: 'schiacciatine', name: 'Schiacciatine', nameEn: 'Schiacciatine', image: '/media/kat-schiacciatine-300x300.webp' },
-  { id: 'spezialitaeten', name: 'Spezialitäten', nameEn: 'Specialties', image: '/media/kat-spezialit-300x300.webp' },
-  { id: 'snacks', name: 'Snacks', nameEn: 'Snacks', image: '/media/kat-snacks-300x300.webp' },
-  { id: 'drinks', name: 'Getränke', nameEn: 'Drinks', image: '/media/kat-drink-300x300.webp' },
-  { id: 'desserts', name: 'Desserts', nameEn: 'Desserts', image: '/media/kat-dessert-2-300x300.webp' },
-  { id: 'mittagsmenu', name: 'Mittagsmenü', nameEn: 'Lunch Menu', image: '/media/kat-mittagmenu-300x300.webp' },
-  { id: 'pide', name: 'Pide', nameEn: 'Pide', image: '/media/kat-pide-300x300.webp' },
+  { id: 'pizza', name: 'Pizza', nameEn: 'Pizza', image: 'media/kat-pizza-300x300.webp' },
+  { id: 'pasta', name: 'Pasta', nameEn: 'Pasta', image: 'media/kat-pasta-300x300.webp' },
+  { id: 'salat', name: 'Salate', nameEn: 'Salads', image: 'media/kat-salat-2-300x300.webp' },
+  { id: 'schiacciatine', name: 'Schiacciatine', nameEn: 'Schiacciatine', image: 'media/kat-schiacciatine-300x300.webp' },
+  { id: 'spezialitaeten', name: 'Spezialitäten', nameEn: 'Specialties', image: 'media/kat-spezialit-300x300.webp' },
+  { id: 'snacks', name: 'Snacks', nameEn: 'Snacks', image: 'media/kat-snacks-300x300.webp' },
+  { id: 'drinks', name: 'Getränke', nameEn: 'Drinks', image: 'media/kat-drink-300x300.webp' },
+  { id: 'desserts', name: 'Desserts', nameEn: 'Desserts', image: 'media/kat-dessert-2-300x300.webp' },
+  { id: 'mittagsmenu', name: 'Mittagsmenü', nameEn: 'Lunch Menu', image: 'media/kat-mittagmenu-300x300.webp' },
+  { id: 'pide', name: 'Pide', nameEn: 'Pide', image: 'media/kat-pide-300x300.webp' },
 ];
 
 export const toppings: Topping[] = [

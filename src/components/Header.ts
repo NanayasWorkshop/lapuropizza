@@ -1,6 +1,6 @@
 import { t, i18n } from '../i18n';
 import { cartStore } from '../store/cart';
-import { scrollToSection } from '../utils/dom';
+import { scrollToSection, assetUrl } from '../utils/dom';
 
 export class Header {
   private element: HTMLElement;
@@ -23,7 +23,7 @@ export class Header {
     this.element.innerHTML = `
       <div class="header-container">
         <a href="#" class="header-logo">
-          <img src="/media/LaPuroLogoRaueWandHG-1-150x150.webp" alt="La Puro Pizza" />
+          <img src="${assetUrl('media/LaPuroLogoRaueWandHG-1-150x150.webp')}" alt="La Puro Pizza" />
         </a>
 
         <nav class="header-nav ${this.isMenuOpen ? 'open' : ''}">

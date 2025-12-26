@@ -1,5 +1,6 @@
 import { t, i18n } from '../i18n';
 import { categories } from '../data/menu';
+import { assetUrl } from '../utils/dom';
 import type { Category } from '../types';
 
 export class Categories {
@@ -27,7 +28,7 @@ export class Categories {
               (cat) => `
             <button class="category-card" data-category="${cat.id}">
               <div class="category-image">
-                <img src="${cat.image}" alt="${i18n.language === 'de' ? cat.name : cat.nameEn}" loading="lazy" />
+                <img src="${assetUrl(cat.image)}" alt="${i18n.language === 'de' ? cat.name : cat.nameEn}" loading="lazy" />
               </div>
               <span class="category-name">${t(`categories.${cat.id}`)}</span>
             </button>

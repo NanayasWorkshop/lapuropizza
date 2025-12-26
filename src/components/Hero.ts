@@ -1,5 +1,5 @@
 import { t, i18n } from '../i18n';
-import { scrollToSection } from '../utils/dom';
+import { scrollToSection, assetUrl } from '../utils/dom';
 
 export class Hero {
   private element: HTMLElement;
@@ -21,16 +21,16 @@ export class Hero {
           muted
           loop
           playsinline
-          poster="/media/kat-pizza-300x300.webp"
+          poster="${assetUrl('media/kat-pizza-300x300.webp')}"
         >
-          <source src="/media/pizza-hg.mp4" type="video/mp4" />
+          <source src="${assetUrl('media/pizza-hg.mp4')}" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
       </div>
 
       <div class="hero-content">
         <img
-          src="/media/LaPuroLogoRaueWandHG-1-150x150.webp"
+          src="${assetUrl('media/LaPuroLogoRaueWandHG-1-150x150.webp')}"
           alt="La Puro Pizza"
           class="hero-logo"
         />

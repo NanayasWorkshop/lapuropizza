@@ -49,6 +49,13 @@ export function formatPrice(price: number): string {
   return `CHF ${price.toFixed(2).replace('.00', '.-')}`;
 }
 
+export function assetUrl(path: string): string {
+  const base = import.meta.env.BASE_URL;
+  // Remove leading slash from path if present
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${base}${cleanPath}`;
+}
+
 export function debounce<T extends (...args: unknown[]) => void>(
   fn: T,
   delay: number
