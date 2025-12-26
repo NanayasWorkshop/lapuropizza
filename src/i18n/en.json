@@ -27,6 +27,7 @@
   },
   "menu": {
     "title": "Menu",
+    "subtitle": "All prices in CHF incl. VAT",
     "addToCart": "Add to Cart",
     "customize": "Customize",
     "size": {
@@ -82,7 +83,8 @@
     "hoursWeekend": "Sat-Sun: 11:00 - 22:00",
     "contact": "Contact",
     "followUs": "Follow Us",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "pricesIncludeVat": "All prices in CHF incl. VAT"
   },
   "common": {
     "close": "Close",

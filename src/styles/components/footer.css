@@ -100,6 +100,11 @@
   margin: 0;
 }
 
+.footer-bottom .vat-notice {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;

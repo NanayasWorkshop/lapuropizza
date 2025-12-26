@@ -11,6 +11,7 @@ export class PizzaBuilder {
   private selectedSize: 'small' | 'large' = 'small';
   private addedToppings: Topping[] = [];
   private removedIngredients: string[] = [];
+  private scrollPosition = 0;
 
   constructor() {
     this.element = document.createElement('div');
@@ -37,7 +38,23 @@ export class PizzaBuilder {
     return basePrice + toppingsPrice;
   }
 
+  private saveScrollPosition(): void {
+    const body = this.element.querySelector('.builder-body');
+    if (body) {
+      this.scrollPosition = body.scrollTop;
+    }
+  }
+
+  private restoreScrollPosition(): void {
+    const body = this.element.querySelector('.builder-body');
+    if (body) {
+      body.scrollTop = this.scrollPosition;
+    }
+  }
+
   private render(): void {
+    this.saveScrollPosition();
+
     if (!this.currentItem) {
       this.element.innerHTML = `
         <div class="builder-overlay ${this.isOpen ? 'open' : ''}"></div>
@@ -149,6 +166,9 @@ export class PizzaBuilder {
     `;
 
     this.attachEvents();
+
+    // Restore scroll position after re-render
+    requestAnimationFrame(() => this.restoreScrollPosition());
   }
 
   private renderTopping(topping: Topping): string {

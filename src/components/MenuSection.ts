@@ -33,6 +33,7 @@ export class MenuSection {
       <div class="container">
         <div class="section-title">
           <h2>${t('menu.title')}</h2>
+          <p>${t('menu.subtitle')}</p>
         </div>
 
         <div class="menu-filters">

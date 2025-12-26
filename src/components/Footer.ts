@@ -70,6 +70,7 @@ export class Footer {
         </div>
 
         <div class="footer-bottom">
+          <p class="vat-notice">${t('footer.pricesIncludeVat')}</p>
           <p>&copy; ${currentYear} La Puro Pizza. ${t('footer.rights')}.</p>
         </div>
       </div>
