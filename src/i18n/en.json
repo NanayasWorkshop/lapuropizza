@@ -93,5 +93,10 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "chf": "CHF"
+  },
+  "toast": {
+    "addedToCart": "Added to cart",
+    "cartEmpty": "Your cart is empty",
+    "orderPlaced": "Order placed successfully"
   }
 }

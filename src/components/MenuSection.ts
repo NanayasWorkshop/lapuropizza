@@ -2,6 +2,7 @@ import { t, i18n } from '../i18n';
 import { menuItems, categories } from '../data/menu';
 import { cartStore } from '../store/cart';
 import { formatPrice } from '../utils/dom';
+import { toast } from './Toast';
 import type { MenuItem, Category } from '../types';
 
 export class MenuSection {
@@ -139,7 +140,11 @@ export class MenuSection {
     const size = item.prices.regular !== undefined ? 'regular' : 'small';
     cartStore.addItem(item, size);
 
-    // Show feedback
+    // Show toast notification
+    const name = i18n.language === 'en' && item.nameEn ? item.nameEn : item.name;
+    toast.success(`${name} - ${t('toast.addedToCart')}`);
+
+    // Show button feedback
     const btn = this.element.querySelector(`.add-btn[data-item-id="${item.id}"]`);
     if (btn) {
       btn.classList.add('added');

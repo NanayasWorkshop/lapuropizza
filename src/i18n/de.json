@@ -93,5 +93,10 @@
     "loading": "Laden...",
     "error": "Ein Fehler ist aufgetreten",
     "chf": "CHF"
+  },
+  "toast": {
+    "addedToCart": "Zum Warenkorb hinzugefügt",
+    "cartEmpty": "Ihr Warenkorb ist leer",
+    "orderPlaced": "Bestellung erfolgreich aufgegeben"
   }
 }

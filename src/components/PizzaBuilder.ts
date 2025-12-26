@@ -2,6 +2,7 @@ import { t, i18n } from '../i18n';
 import { toppings } from '../data/menu';
 import { cartStore } from '../store/cart';
 import { formatPrice } from '../utils/dom';
+import { toast } from './Toast';
 import type { MenuItem, Topping } from '../types';
 
 export class PizzaBuilder {
@@ -253,6 +254,10 @@ export class PizzaBuilder {
       this.addedToppings,
       this.removedIngredients
     );
+
+    // Show toast notification
+    const name = i18n.language === 'en' && this.currentItem.nameEn ? this.currentItem.nameEn : this.currentItem.name;
+    toast.success(`${name} - ${t('toast.addedToCart')}`);
 
     this.close();
 

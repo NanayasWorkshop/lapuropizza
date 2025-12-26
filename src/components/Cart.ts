@@ -1,6 +1,7 @@
 import { t, i18n } from '../i18n';
 import { cartStore } from '../store/cart';
 import { formatPrice } from '../utils/dom';
+import { toast } from './Toast';
 import type { Cart as CartType } from '../types';
 
 export class Cart {
@@ -154,6 +155,11 @@ export class Cart {
     // Checkout button
     const checkoutBtn = this.element.querySelector('.cart-checkout');
     checkoutBtn?.addEventListener('click', () => {
+      const cart = cartStore.getCart();
+      if (cart.items.length === 0) {
+        toast.error(t('toast.cartEmpty'));
+        return;
+      }
       window.dispatchEvent(new CustomEvent('open-checkout'));
       this.close();
     });

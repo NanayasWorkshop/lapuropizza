@@ -6,6 +6,7 @@ import './styles/components/menu.css';
 import './styles/components/cart.css';
 import './styles/components/builder.css';
 import './styles/components/checkout.css';
+import './styles/components/toast.css';
 import './styles/components/footer.css';
 
 import { Header } from './components/Header';
