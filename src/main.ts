@@ -4,6 +4,8 @@ import './styles/components/hero.css';
 import './styles/components/categories.css';
 import './styles/components/menu.css';
 import './styles/components/cart.css';
+import './styles/components/builder.css';
+import './styles/components/checkout.css';
 import './styles/components/footer.css';
 
 import { Header } from './components/Header';
@@ -11,6 +13,8 @@ import { Hero } from './components/Hero';
 import { Categories } from './components/Categories';
 import { MenuSection } from './components/MenuSection';
 import { Cart } from './components/Cart';
+import { PizzaBuilder } from './components/PizzaBuilder';
+import { Checkout } from './components/Checkout';
 import { Footer } from './components/Footer';
 
 class App {
@@ -51,6 +55,14 @@ class App {
     // Mount cart (fixed position, outside main flow)
     const cart = new Cart();
     cart.mount(this.app);
+
+    // Mount pizza builder modal
+    const pizzaBuilder = new PizzaBuilder();
+    pizzaBuilder.mount(this.app);
+
+    // Mount checkout modal
+    const checkout = new Checkout();
+    checkout.mount(this.app);
 
     // Add padding for fixed header
     main.style.paddingTop = 'var(--header-height)';
