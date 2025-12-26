@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "hero": {
+    "tagline": "Authentic Italian Pizza",
+    "subtitle": "Freshly prepared in Zurich",
+    "cta": "View Menu"
+  },
+  "categories": {
+    "title": "Our Categories",
+    "subtitle": "Choose from our diverse selection",
+    "pizza": "Pizza",
+    "pasta": "Pasta",
+    "salat": "Salads",
+    "schiacciatine": "Schiacciatine",
+    "spezialitaeten": "Specialties",
+    "snacks": "Snacks",
+    "drinks": "Drinks",
+    "desserts": "Desserts",
+    "mittagsmenu": "Lunch Menu",
+    "pide": "Pide",
+    "tellergerichte": "Main Dishes"
+  },
+  "menu": {
+    "title": "Menu",
+    "addToCart": "Add to Cart",
+    "customize": "Customize",
+    "size": {
+      "small": "Small (32cm)",
+      "large": "Large (45cm)",
+      "regular": "Regular"
+    },
+    "from": "from"
+  },
+  "builder": {
+    "title": "Customize Pizza",
+    "buildOwn": "Build Your Own Pizza",
+    "selectSize": "Select Size",
+    "toppings": "Toppings",
+    "addTopping": "Add Topping",
+    "removeIngredient": "Remove Ingredient",
+    "total": "Total",
+    "addToCart": "Add to Cart"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "continueShopping": "Continue Shopping"
+  },
+  "checkout": {
+    "title": "Complete Your Order",
+    "delivery": "Delivery",
+    "pickup": "Pickup",
+    "customerInfo": "Contact Information",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "zip": "Postal Code",
+    "notes": "Notes",
+    "payment": "Payment",
+    "payCard": "Pay with Card",
+    "payCash": "Cash on Delivery",
+    "placeOrder": "Place Order",
+    "orderSuccess": "Order Successful!",
+    "orderConfirmed": "Your order has been confirmed"
+  },
+  "footer": {
+    "address": "Wydäckerring 148, 8047 Zürich",
+    "hours": "Opening Hours",
+    "hoursWeekday": "Mon-Fri: 10:30 - 22:00",
+    "hoursWeekend": "Sat-Sun: 11:00 - 22:00",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "chf": "CHF"
+  }
+}

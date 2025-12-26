@@ -1,0 +1,65 @@
+MEDIA FOLDER CONTENTS
+=====================
+
+Type: Menu category images (thumbnails) for restaurant website
+Format: 12 WebP images (300x300px) + 1 MP4 video + 1 logo (150x150px)
+
+IMAGE DESCRIPTIONS
+==================
+
+LaPuroLogoRaueWandHG-1-150x150.webp
+  - "La Puro Pizza" logo with pizza slice graphic
+  - Size: 150x150px
+
+kat-pizza-300x300.webp
+  - Margherita pizza with basil on wooden table
+  - Category: Pizza
+
+kat-pasta-300x300.webp
+  - Spaghetti with green pesto sauce on black plate
+  - Category: Pasta
+
+kat-salat-2-300x300.webp
+  - Gourmet salad with mozzarella on black plate
+  - Category: Salat (Salad)
+
+kat-dessert-2-300x300.webp
+  - Tiramisu in glasses with mint garnish
+  - Category: Desserts
+
+kat-drink-300x300.webp
+  - Cola/soft drinks with ice in glasses
+  - Category: Drinks
+
+kat-schiacciatine-300x300.webp
+  - Italian flatbread pieces in wooden bowl
+  - Category: Schiacciatine
+
+kat-snacks-300x300.webp
+  - Onion rings with ketchup dip on black plate
+  - Category: Snacks
+
+kat-spezialit-300x300.webp
+  - Glazed chicken wings with dipping sauce
+  - Category: Spezialitaeten (Specialties)
+
+kat-mittagmenu-300x300.webp
+  - Lunch combo showing pizza, salad, and cola together
+  - Category: Mittagsmenu (Lunch Menu)
+
+kat-pide-300x300.webp
+  - Turkish pide with pepperoni on wooden board
+  - Category: Pide
+
+kat-tellergerichte-300x300.webp
+  - Stuffed grape leaves (dolma) with yogurt sauce
+  - Category: Tellergerichte (Plate Dishes)
+
+VIDEO
+=====
+
+pizza-hg.mp4
+  - Background video for website (pizza theme)
+
+=====================
+Last updated: 2025-12-26

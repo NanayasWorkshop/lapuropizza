@@ -1,0 +1,223 @@
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  pointer-events: none;
+}
+
+.cart-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color var(--transition-normal);
+  pointer-events: none;
+}
+
+.cart-overlay.open {
+  background-color: rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+}
+
+.cart-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  pointer-events: auto;
+}
+
+.cart-panel.open {
+  transform: translateX(0);
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-header h2 {
+  font-size: var(--font-size-xl);
+  margin: 0;
+}
+
+.cart-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cart-close:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.cart-empty svg {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.cart-empty p {
+  margin-bottom: var(--spacing-lg);
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cart-item {
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.cart-item-info {
+  margin-bottom: var(--spacing-sm);
+}
+
+.cart-item-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.cart-item-size,
+.cart-item-extras {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.qty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background-color: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+.cart-item-price {
+  flex: 1;
+  text-align: right;
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent-warm);
+}
+
+.cart-item-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cart-item-remove:hover {
+  color: var(--error);
+  background-color: rgba(196, 92, 74, 0.1);
+}
+
+.cart-footer {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.cart-totals {
+  margin-bottom: var(--spacing-lg);
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.cart-checkout {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .cart-panel {
+    max-width: 100%;
+  }
+}

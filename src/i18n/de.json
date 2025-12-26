@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "menu": "Speisekarte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cart": "Warenkorb"
+  },
+  "hero": {
+    "tagline": "Authentische italienische Pizza",
+    "subtitle": "Frisch zubereitet in Zürich",
+    "cta": "Speisekarte ansehen"
+  },
+  "categories": {
+    "title": "Unsere Kategorien",
+    "subtitle": "Wählen Sie aus unserem vielfältigen Angebot",
+    "pizza": "Pizza",
+    "pasta": "Pasta",
+    "salat": "Salate",
+    "schiacciatine": "Schiacciatine",
+    "spezialitaeten": "Spezialitäten",
+    "snacks": "Snacks",
+    "drinks": "Getränke",
+    "desserts": "Desserts",
+    "mittagsmenu": "Mittagsmenü",
+    "pide": "Pide",
+    "tellergerichte": "Tellergerichte"
+  },
+  "menu": {
+    "title": "Speisekarte",
+    "addToCart": "In den Warenkorb",
+    "customize": "Anpassen",
+    "size": {
+      "small": "Klein (32cm)",
+      "large": "Gross (45cm)",
+      "regular": "Normal"
+    },
+    "from": "ab"
+  },
+  "builder": {
+    "title": "Pizza anpassen",
+    "buildOwn": "Eigene Pizza erstellen",
+    "selectSize": "Grösse wählen",
+    "toppings": "Zutaten",
+    "addTopping": "Zutat hinzufügen",
+    "removeIngredient": "Zutat entfernen",
+    "total": "Gesamt",
+    "addToCart": "In den Warenkorb"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "subtotal": "Zwischensumme",
+    "delivery": "Lieferung",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "remove": "Entfernen",
+    "continueShopping": "Weiter einkaufen"
+  },
+  "checkout": {
+    "title": "Bestellung abschliessen",
+    "delivery": "Lieferung",
+    "pickup": "Abholung",
+    "customerInfo": "Kontaktdaten",
+    "name": "Name",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "city": "Stadt",
+    "zip": "PLZ",
+    "notes": "Anmerkungen",
+    "payment": "Zahlung",
+    "payCard": "Mit Karte bezahlen",
+    "payCash": "Bar bei Lieferung",
+    "placeOrder": "Bestellung aufgeben",
+    "orderSuccess": "Bestellung erfolgreich!",
+    "orderConfirmed": "Ihre Bestellung wurde bestätigt"
+  },
+  "footer": {
+    "address": "Wydäckerring 148, 8047 Zürich",
+    "hours": "Öffnungszeiten",
+    "hoursWeekday": "Mo-Fr: 10:30 - 22:00",
+    "hoursWeekend": "Sa-So: 11:00 - 22:00",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten"
+  },
+  "common": {
+    "close": "Schliessen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "chf": "CHF"
+  }
+}
