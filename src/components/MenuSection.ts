@@ -5,11 +5,19 @@ import { formatPrice } from '../utils/dom';
 import { toast } from './Toast';
 import type { MenuItem, Category } from '../types';
 
+type ViewMode = 'grid' | 'list';
+
 export class MenuSection {
   private element: HTMLElement;
   private activeCategory: Category | null = null;
+  private viewMode: ViewMode = 'grid';
 
   constructor() {
+    // Load saved view preference
+    const savedView = localStorage.getItem('menuViewMode') as ViewMode;
+    if (savedView === 'grid' || savedView === 'list') {
+      this.viewMode = savedView;
+    }
     this.element = document.createElement('section');
     this.element.className = 'section menu-section';
     this.element.id = 'menu';
@@ -37,22 +45,41 @@ export class MenuSection {
           <p>${t('menu.subtitle')}</p>
         </div>
 
-        <div class="menu-filters">
-          <button class="filter-btn ${!this.activeCategory ? 'active' : ''}" data-category="">
-            Alle
-          </button>
-          ${categories
-            .map(
-              (cat) => `
-            <button class="filter-btn ${this.activeCategory === cat.id ? 'active' : ''}" data-category="${cat.id}">
-              ${t(`categories.${cat.id}`)}
+        <div class="menu-toolbar">
+          <div class="menu-filters">
+            <button class="filter-btn ${!this.activeCategory ? 'active' : ''}" data-category="">
+              Alle
             </button>
-          `
-            )
-            .join('')}
+            ${categories
+              .map(
+                (cat) => `
+              <button class="filter-btn ${this.activeCategory === cat.id ? 'active' : ''}" data-category="${cat.id}">
+                ${t(`categories.${cat.id}`)}
+              </button>
+            `
+              )
+              .join('')}
+          </div>
+          <div class="view-toggle">
+            <button class="view-toggle-btn ${this.viewMode === 'grid' ? 'active' : ''}" data-view="grid" aria-label="Grid view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+              </svg>
+            </button>
+            <button class="view-toggle-btn ${this.viewMode === 'list' ? 'active' : ''}" data-view="list" aria-label="List view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div class="menu-grid">
+        <div class="menu-grid ${this.viewMode === 'list' ? 'menu-list' : ''}">
           ${items.map((item) => this.renderMenuItem(item)).join('')}
         </div>
       </div>
@@ -99,6 +126,19 @@ export class MenuSection {
   }
 
   private attachEvents(): void {
+    // View toggle buttons
+    const viewBtns = this.element.querySelectorAll('.view-toggle-btn');
+    viewBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = (btn as HTMLElement).dataset.view as ViewMode;
+        if (view && view !== this.viewMode) {
+          this.viewMode = view;
+          localStorage.setItem('menuViewMode', view);
+          this.render();
+        }
+      });
+    });
+
     // Filter buttons
     const filterBtns = this.element.querySelectorAll('.filter-btn');
     filterBtns.forEach((btn) => {
