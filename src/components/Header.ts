@@ -1,14 +1,17 @@
 import { t, i18n } from '../i18n';
 import { cartStore } from '../store/cart';
 import { scrollToSection, assetUrl } from '../utils/dom';
+import { AddressPicker } from './AddressPicker';
 
 export class Header {
   private element: HTMLElement;
   private isMenuOpen = false;
+  private addressPicker: AddressPicker;
 
   constructor() {
     this.element = document.createElement('header');
     this.element.className = 'header';
+    this.addressPicker = new AddressPicker();
     this.render();
     this.attachEvents();
 
@@ -25,6 +28,8 @@ export class Header {
         <a href="#" class="header-logo">
           <img src="${assetUrl('media/LaPuroLogoRaueWandHG-1-150x150.webp')}" alt="La Puro Pizza" />
         </a>
+
+        <div class="header-address-wrapper"></div>
 
         <nav class="header-nav ${this.isMenuOpen ? 'open' : ''}">
           <a href="#menu" class="nav-link" data-section="menu">${t('nav.menu')}</a>
@@ -54,6 +59,13 @@ export class Header {
         </div>
       </div>
     `;
+
+    // Mount address picker
+    const addressWrapper = this.element.querySelector('.header-address-wrapper');
+    if (addressWrapper) {
+      addressWrapper.innerHTML = '';
+      addressWrapper.appendChild(this.addressPicker.getElement());
+    }
 
     this.attachEvents();
   }

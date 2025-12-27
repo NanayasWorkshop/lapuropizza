@@ -74,7 +74,10 @@
     "payCash": "Cash on Delivery",
     "placeOrder": "Place Order",
     "orderSuccess": "Order Successful!",
-    "orderConfirmed": "Your order has been confirmed"
+    "orderConfirmed": "Your order has been confirmed",
+    "belowMinimum": "Minimum order not reached:",
+    "deliveryNotAvailable": "Delivery not available",
+    "orderTooSmall": "Minimum order not reached"
   },
   "footer": {
     "address": "Wydäckerring 148, 8047 Zürich",
@@ -98,5 +101,22 @@
     "addedToCart": "Added to cart",
     "cartEmpty": "Your cart is empty",
     "orderPlaced": "Order placed successfully"
+  },
+  "address": {
+    "placeholder": "Enter delivery address",
+    "inputPlaceholder": "Street, house number, postal code, city",
+    "useGps": "Use location",
+    "clear": "Clear address",
+    "deliveryPossible": "Delivery available",
+    "noDelivery": "Unfortunately we don't deliver to this area",
+    "pickupAvailable": "Pickup at the restaurant is available",
+    "minOrder": "Minimum order",
+    "deliveryFee": "Delivery fee",
+    "free": "Free",
+    "time": "Delivery time",
+    "gpsNotSupported": "GPS not supported",
+    "gpsPermissionDenied": "Location permission denied. Please allow access.",
+    "gpsUnavailable": "Location unavailable. Please try again.",
+    "gpsTimeout": "Location request timed out. Please try again."
   }
 }

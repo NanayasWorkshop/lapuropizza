@@ -1,0 +1,295 @@
+.address-picker {
+  position: relative;
+}
+
+.address-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  max-width: 220px;
+}
+
+.address-picker-trigger:hover {
+  border-color: var(--border-light);
+  background-color: var(--bg-tertiary);
+}
+
+.address-icon {
+  flex-shrink: 0;
+  color: var(--accent-warm);
+}
+
+.address-text {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.address-check {
+  flex-shrink: 0;
+  color: var(--accent-green, #22c55e);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.address-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.address-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.address-dropdown {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  left: 0;
+  min-width: 320px;
+  padding: var(--spacing-md);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-fast);
+  z-index: var(--z-dropdown, 100);
+}
+
+.address-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.address-input-wrapper {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.address-input {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.address-input:focus {
+  outline: none;
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.2);
+}
+
+.address-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.address-gps-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.address-gps-btn:hover:not(:disabled) {
+  background-color: var(--accent-warm);
+  color: var(--bg-primary);
+  border-color: var(--accent-warm);
+}
+
+.address-gps-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Delivery Info */
+.delivery-info {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.delivery-info--success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.delivery-info--error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.delivery-info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.delivery-check-icon {
+  color: #22c55e;
+  font-size: var(--font-size-lg);
+}
+
+.delivery-x-icon {
+  color: #ef4444;
+  font-size: var(--font-size-lg);
+}
+
+.delivery-info-details {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.delivery-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.delivery-label {
+  color: var(--text-muted);
+}
+
+.delivery-value {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.delivery-pickup-hint {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Clear button */
+.address-clear-btn {
+  width: 100%;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.address-clear-btn:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--accent-warm);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Google Places Autocomplete styling */
+.pac-container {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+  font-family: var(--font-family) !important;
+  margin-top: var(--spacing-xs) !important;
+  z-index: 10000 !important;
+}
+
+.pac-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  border-top: 1px solid var(--border-color);
+}
+
+.pac-item:first-child {
+  border-top: none;
+}
+
+.pac-item:hover,
+.pac-item-selected {
+  background-color: var(--bg-secondary);
+}
+
+.pac-item-query {
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+}
+
+.pac-matched {
+  font-weight: var(--font-weight-semibold);
+}
+
+.pac-icon {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .address-picker-trigger {
+    max-width: 160px;
+    padding: var(--spacing-xs);
+  }
+
+  .address-text {
+    font-size: 12px;
+  }
+
+  .address-dropdown {
+    position: fixed;
+    top: var(--header-height);
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .address-picker-trigger {
+    max-width: 120px;
+  }
+
+  .address-icon {
+    display: none;
+  }
+}

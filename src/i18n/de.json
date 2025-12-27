@@ -74,7 +74,10 @@
     "payCash": "Bar bei Lieferung",
     "placeOrder": "Bestellung aufgeben",
     "orderSuccess": "Bestellung erfolgreich!",
-    "orderConfirmed": "Ihre Bestellung wurde bestätigt"
+    "orderConfirmed": "Ihre Bestellung wurde bestätigt",
+    "belowMinimum": "Mindestbestellwert nicht erreicht:",
+    "deliveryNotAvailable": "Lieferung nicht möglich",
+    "orderTooSmall": "Mindestbestellwert nicht erreicht"
   },
   "footer": {
     "address": "Wydäckerring 148, 8047 Zürich",
@@ -98,5 +101,22 @@
     "addedToCart": "Zum Warenkorb hinzugefügt",
     "cartEmpty": "Ihr Warenkorb ist leer",
     "orderPlaced": "Bestellung erfolgreich aufgegeben"
+  },
+  "address": {
+    "placeholder": "Lieferadresse eingeben",
+    "inputPlaceholder": "Strasse, Hausnummer, PLZ Stadt",
+    "useGps": "Standort verwenden",
+    "clear": "Adresse löschen",
+    "deliveryPossible": "Lieferung möglich",
+    "noDelivery": "Leider liefern wir nicht in dieses Gebiet",
+    "pickupAvailable": "Abholung im Restaurant ist möglich",
+    "minOrder": "Mindestbestellung",
+    "deliveryFee": "Liefergebühr",
+    "free": "Kostenlos",
+    "time": "Lieferzeit",
+    "gpsNotSupported": "GPS wird nicht unterstützt",
+    "gpsPermissionDenied": "Standortzugriff verweigert. Bitte erlauben Sie den Zugriff.",
+    "gpsUnavailable": "Standort nicht verfügbar. Bitte erneut versuchen.",
+    "gpsTimeout": "Standortabfrage Zeitüberschreitung. Bitte erneut versuchen."
   }
 }

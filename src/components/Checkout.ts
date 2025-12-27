@@ -1,5 +1,6 @@
 import { t, i18n } from '../i18n';
 import { cartStore } from '../store/cart';
+import { addressStore } from '../store/address';
 import { formatPrice } from '../utils/dom';
 
 type DeliveryType = 'delivery' | 'pickup';
@@ -20,19 +21,23 @@ export class Checkout {
 
     i18n.subscribe(() => this.render());
     cartStore.subscribe(() => this.render());
+    addressStore.subscribe(() => this.render());
 
     window.addEventListener('open-checkout', () => this.open());
   }
 
   private render(): void {
     const cart = cartStore.getCart();
-    const deliveryFee = this.deliveryType === 'delivery' ? 5 : 0;
+    const savedAddress = addressStore.getAddress();
+    const deliveryFee = this.deliveryType === 'delivery' ? (savedAddress?.deliveryFee ?? 5) : 0;
+    const minimumOrder = savedAddress?.minimumOrder ?? 0;
+    const canDeliver = savedAddress?.canDeliver ?? false;
     const total = cart.subtotal + deliveryFee;
 
     this.element.innerHTML = `
       <div class="checkout-overlay ${this.isOpen ? 'open' : ''}" data-close></div>
       <div class="checkout-modal ${this.isOpen ? 'open' : ''}">
-        ${this.orderComplete ? this.renderSuccess() : this.renderForm(cart, deliveryFee, total)}
+        ${this.orderComplete ? this.renderSuccess() : this.renderForm(cart, deliveryFee, total, savedAddress, minimumOrder, canDeliver)}
       </div>
     `;
 
@@ -55,7 +60,38 @@ export class Checkout {
     `;
   }
 
-  private renderForm(cart: ReturnType<typeof cartStore.getCart>, deliveryFee: number, total: number): string {
+  private renderForm(
+    cart: ReturnType<typeof cartStore.getCart>,
+    deliveryFee: number,
+    total: number,
+    savedAddress: ReturnType<typeof addressStore.getAddress>,
+    minimumOrder: number,
+    canDeliver: boolean
+  ): string {
+    // Parse address parts from saved address
+    let streetAddress = '';
+    let zip = '';
+    let city = 'Zürich';
+
+    if (savedAddress?.address) {
+      // Try to parse "Street 123, 8000 City, Country" format
+      const parts = savedAddress.address.split(',').map(p => p.trim());
+      if (parts.length >= 2) {
+        streetAddress = parts[0];
+        // Try to extract ZIP and city from second part
+        const zipCityMatch = parts[1].match(/(\d{4})\s+(.+)/);
+        if (zipCityMatch) {
+          zip = zipCityMatch[1];
+          city = zipCityMatch[2];
+        }
+      }
+    }
+
+    // Check if order can proceed
+    const deliveryBlocked = this.deliveryType === 'delivery' && savedAddress && !canDeliver;
+    const belowMinimum = this.deliveryType === 'delivery' && cart.subtotal < minimumOrder;
+    const orderBlocked = deliveryBlocked || belowMinimum;
+
     return `
       <div class="checkout-header">
         <h2>${t('checkout.title')}</h2>
@@ -76,6 +112,18 @@ export class Checkout {
               ${t('checkout.pickup')}
             </button>
           </div>
+
+          ${deliveryBlocked ? `
+            <div class="checkout-warning checkout-warning--error">
+              <span>⚠️</span> ${savedAddress?.message || t('address.noDelivery')}
+            </div>
+          ` : ''}
+
+          ${belowMinimum && !deliveryBlocked ? `
+            <div class="checkout-warning checkout-warning--error">
+              <span>⚠️</span> ${t('checkout.belowMinimum')} CHF ${minimumOrder}
+            </div>
+          ` : ''}
         </div>
 
         <div class="checkout-section">
@@ -100,17 +148,17 @@ export class Checkout {
             ${this.deliveryType === 'delivery' ? `
             <div class="form-group">
               <label for="address">${t('checkout.address')} *</label>
-              <input type="text" id="address" name="address" required />
+              <input type="text" id="address" name="address" value="${streetAddress}" required />
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="zip">${t('checkout.zip')} *</label>
-                <input type="text" id="zip" name="zip" required />
+                <input type="text" id="zip" name="zip" value="${zip}" required />
               </div>
               <div class="form-group flex-2">
                 <label for="city">${t('checkout.city')} *</label>
-                <input type="text" id="city" name="city" value="Zürich" required />
+                <input type="text" id="city" name="city" value="${city}" required />
               </div>
             </div>
             ` : ''}
@@ -183,8 +231,11 @@ export class Checkout {
       </div>
 
       <div class="checkout-footer">
-        <button class="btn btn-primary btn-lg checkout-submit" ${this.isProcessing ? 'disabled' : ''}>
-          ${this.isProcessing ? t('common.loading') : t('checkout.placeOrder')}
+        <button class="btn btn-primary btn-lg checkout-submit" ${this.isProcessing || orderBlocked ? 'disabled' : ''}>
+          ${this.isProcessing ? t('common.loading') :
+            deliveryBlocked ? t('checkout.deliveryNotAvailable') :
+            belowMinimum ? t('checkout.orderTooSmall') :
+            t('checkout.placeOrder')}
         </button>
       </div>
     `;

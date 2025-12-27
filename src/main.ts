@@ -8,6 +8,7 @@ import './styles/components/builder.css';
 import './styles/components/checkout.css';
 import './styles/components/toast.css';
 import './styles/components/footer.css';
+import './styles/components/address-picker.css';
 
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';

@@ -12,4 +12,14 @@ export default defineConfig(({ command }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
   },
+  server: {
+    host: true, // Allow external access (for ngrok)
+    allowedHosts: ['.ngrok-free.dev', '.ngrok.io'],
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
+  },
 }));

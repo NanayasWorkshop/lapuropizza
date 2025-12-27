@@ -30,6 +30,14 @@
   width: auto;
 }
 
+.header-address-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  margin: 0 var(--spacing-lg);
+}
+
 .header-nav {
   display: flex;
   align-items: center;
@@ -129,6 +137,13 @@
 }
 
 @media (max-width: 768px) {
+  .header-address-wrapper {
+    order: 3;
+    flex: 0 0 auto;
+    max-width: 180px;
+    margin: 0 var(--spacing-sm);
+  }
+
   .header-nav {
     position: fixed;
     top: var(--header-height);
